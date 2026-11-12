@@ -1,0 +1,116 @@
+/* ==========================================================================
+   1. PALETA DE 3 CORES (:ROOT), FONTE E RESET (BOX MODEL)
+   ========================================================================== */
+:root {
+    --cor-fundo: #F7F4F0;      /* Cor 1: Bege-areia suave */
+    --cor-texto: #2D2926;      /* Cor 2: Marrom-carvão fosco */
+    --cor-destaque: #A64B37;   /* Cor 3: Terracota fosco */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--cor-fundo);
+    padding: 40px 20px;
+}
+
+/* Cartão principal usando Flexbox para centralizar o conteúdo da cantina */
+body {
+    font-family: var(--fonte-principal);
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding: 36px 28px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* ==========================================================================
+   2. TÍTULO, IMAGEM E DESCRIÇÃO (BOX MODEL)
+   ========================================================================== */
+h1, h2 {
+    width: 100%;
+    text-align: center;
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--cor-destaque);
+    margin-bottom: 18px;
+}
+
+p {
+    text-align: center;
+    margin-bottom: 22px;
+    font-size: 1rem;
+}
+
+/* ==========================================================================
+   3. MENU DE NAVEGAÇÃO DA CANTINA (FLEXBOX + HOVER)
+   ========================================================================== */
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Links estilizados como cartões clicáveis com borda lateral em destaque */
+a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    border: 1px solid var(--cor-destaque);
+    border-left: 4px solid var(--cor-destaque);
+    padding: 12px 18px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Efeito Hover: preenche o botão com a cor terracota ao passar o mouse */
+a:hover {
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   4. LAYOUT RESPONSIVO (MEDIA QUERY PARA TELAS DE ATÉ 600PX)
+   ========================================================================== */
+@media (max-width: 600px) {
+    html {
+        padding: 16px 10px;
+    }
+
+    body {
+        padding: 24px 16px;
+    }
+
+    h1 {
+        font-size: 1.45rem;
+    }
+}

@@ -1,0 +1,186 @@
+/* ==========================================================================
+   1. PALETA DE 3 CORES (:ROOT), FONTE E RESET (BOX MODEL)
+   O seletor :root guarda variáveis globais para manter as mesmas 3 cores
+   minimalistas e pouco vibrantes em toda a página.
+   ========================================================================== */
+:root {
+    --cor-fundo: #F7F4F0;      /* Cor 1: Bege-areia suave (fundo da página e cartões) */
+    --cor-texto: #2D2926;      /* Cor 2: Marrom-carvão fosco (textos e títulos) */
+    --cor-destaque: #A64B37;   /* Cor 3: Terracota fosco (bordas, botões e hover) */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Zera margens padrão do navegador e ativa border-box para que padding e borda
+   não aumentem o tamanho final das caixas (base do Box Model) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Define a cor de fundo externa e o respiro nas bordas da janela */
+html {
+    background-color: var(--cor-fundo);
+    padding: 40px 20px;
+}
+
+/* Cartão principal centralizado usando propriedades do Box Model */
+body {
+    font-family: var(--fonte-principal);
+    max-width: 780px;                  /* Limita a largura máxima no computador */
+    margin: 0 auto;                    /* Centraliza o cartão horizontalmente */
+    background-color: #FFFFFF;         /* Superfície branca limpa para leitura */
+    color: var(--cor-texto);
+    line-height: 1.6;                  /* Espaçamento confortável entre linhas */
+    padding: 36px 28px;                /* Espaçamento interno (Box Model) */
+    border: 1px solid var(--cor-destaque); /* Borda fina minimalista */
+    border-radius: 10px;               /* Cantos levemente arredondados */
+}
+
+/* ==========================================================================
+   2. CABEÇALHO E CARTÕES DE IMAGEM (FLEXBOX + BOX MODEL)
+   ========================================================================== */
+header {
+    display: flex;                     /* Ativa o Flexbox para alinhar os itens */
+    flex-direction: column;            /* Empilha título, imagens e menus na vertical */
+    align-items: center;               /* Centraliza tudo no eixo horizontal */
+    text-align: center;
+    gap: 20px;                         /* Espaço uniforme entre os elementos filhos */
+    margin-bottom: 28px;
+}
+
+h1 {
+    font-size: 1.8rem;
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 8px;
+    width: 100%;
+}
+
+/* Cartão individual para cada imagem e legenda (Box Model + Flexbox) */
+figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+    max-width: 340px;
+}
+
+figure img {
+    max-width: 100%;                   /* Impede a imagem de vazar do cartão */
+    height: auto;                      /* Mantém a proporção original */
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: var(--cor-texto);
+}
+
+/* ==========================================================================
+   3. MENU DE NAVEGAÇÃO COM EFEITO HOVER (FLEXBOX)
+   ========================================================================== */
+nav {
+    width: 100%;
+    max-width: 340px;
+}
+
+nav ul {
+    list-style: none;                  /* Remove as bolinhas padrão da lista */
+    display: flex;                     /* Organiza os itens do menu com Flexbox */
+    justify-content: center;
+    gap: 12px;
+}
+
+nav ul li {
+    width: 100%;
+}
+
+/* Estilização do link do menu em formato de botão */
+nav a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;             /* Remove o sublinhado padrão */
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+    padding: 11px 18px;
+    border-radius: 6px;
+    font-weight: 500;
+    border: 1px solid var(--cor-destaque);
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transição suave */
+}
+
+/* Efeito Hover: inverte as cores quando o mouse passa por cima do menu */
+nav a:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-destaque);
+}
+
+/* ==========================================================================
+   4. SEÇÃO "SOBRE MIM" (CARTÃO COM BOX MODEL) E RODAPÉ
+   ========================================================================== */
+main {
+    margin-bottom: 24px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    color: var(--cor-destaque);
+    margin-bottom: 12px;
+}
+
+/* Cartão de texto com destaque lateral esquerdo */
+section {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-destaque);
+    border-left: 4px solid var(--cor-destaque);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    color: var(--cor-texto);
+}
+
+footer {
+    text-align: center;
+    padding-top: 16px;
+    border-top: 1px solid var(--cor-destaque);
+    font-size: 0.9rem;
+    color: var(--cor-texto);
+}
+
+/* ==========================================================================
+   5. LAYOUT RESPONSIVO (MEDIA QUERY PARA TELAS DE ATÉ 600PX)
+   Sobrescreve os espaçamentos grandes quando aberto em celulares.
+   ========================================================================== */
+@media (max-width: 600px) {
+    html {
+        padding: 16px 10px;            /* Reduz a margem externa nas telas pequenas */
+    }
+
+    body {
+        padding: 24px 16px;            /* Reduz o preenchimento interno do cartão */
+    }
+
+    h1 {
+        font-size: 1.45rem;            /* Ajusta o título para não quebrar feio */
+    }
+
+    nav ul {
+        flex-direction: column;        /* Garante empilhamento vertical no celular */
+    }
+
+    figure,
+    nav {
+        max-width: 100%;               /* Faz cartões e menus ocuparem a tela toda */
+    }
+}

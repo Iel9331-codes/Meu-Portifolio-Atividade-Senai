@@ -1,0 +1,112 @@
+/* ==========================================================================
+   1. PALETA DE 3 CORES (:ROOT), FONTE E RESET (BOX MODEL)
+   ========================================================================== */
+:root {
+    --cor-fundo: #F7F4F0;      /* Cor 1: Bege-areia suave */
+    --cor-texto: #2D2926;      /* Cor 2: Marrom-carvão fosco */
+    --cor-destaque: #A64B37;   /* Cor 3: Terracota fosco */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--cor-fundo);
+    padding: 40px 20px;
+}
+
+/* Cartão principal centralizado */
+body {
+    font-family: var(--fonte-principal);
+    max-width: 780px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding: 36px 28px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   2. TÍTULOS E CARTÕES DE PROJETO (FLEXBOX + BOX MODEL)
+   ========================================================================== */
+h1, h2 {
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Cada bloco de projeto funciona como um cartão organizado com Flexbox */
+section, figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+/* ==========================================================================
+   3. MENU E BOTÕES DE NAVEGAÇÃO (FLEXBOX + HOVER)
+   ========================================================================== */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+    border: 1px solid var(--cor-destaque);
+    padding: 12px 20px;
+    margin-top: 10px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Efeito Hover nos links de acesso aos projetos e botão voltar */
+a:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-destaque);
+}
+
+/* ==========================================================================
+   4. LAYOUT RESPONSIVO (MEDIA QUERY PARA TELAS DE ATÉ 600PX)
+   ========================================================================== */
+@media (max-width: 600px) {
+    html {
+        padding: 16px 10px;
+    }
+
+    body {
+        padding: 24px 16px;
+    }
+
+    h1, h2 {
+        font-size: 1.4rem;
+    }
+}

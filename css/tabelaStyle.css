@@ -1,0 +1,132 @@
+/* ==========================================================================
+   1. PALETA DE 3 CORES (:ROOT), FONTE E RESET (BOX MODEL)
+   ========================================================================== */
+:root {
+    --cor-fundo: #F7F4F0;      /* Cor 1: Bege-areia suave */
+    --cor-texto: #2D2926;      /* Cor 2: Marrom-carvão fosco */
+    --cor-destaque: #A64B37;   /* Cor 3: Terracota fosco */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--cor-fundo);
+    padding: 40px 20px;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding: 36px 28px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   2. TABELA DO CARDÁPIO (BOX MODEL E LINHAS ALTERNADAS)
+   ========================================================================== */
+h2 {
+    text-align: center;
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 10px;
+    margin-bottom: 24px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;         /* Une as bordas das células sem espaços duplos */
+    margin-bottom: 24px;
+    border: 1px solid var(--cor-destaque);
+}
+
+/* Cabeçalho da tabela */
+thead th {
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+    text-align: left;
+    padding: 12px 16px;
+    font-weight: 600;
+}
+
+/* Células de itens e preços */
+tbody td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--cor-fundo);
+}
+
+/* Efeito zebra suave: pinta as linhas pares para facilitar a leitura */
+tbody tr:nth-child(even) {
+    background-color: var(--cor-fundo);
+}
+
+/* ==========================================================================
+   3. BOTÕES DE ABRIR PDF E VOLTAR (FLEXBOX + HOVER)
+   ========================================================================== */
+.btn-pdf,
+.btn-voltar,
+a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    text-decoration: none;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Botão principal destacado para abrir o cardápio completo em PDF */
+.btn-pdf {
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+    border: 1px solid var(--cor-destaque);
+    margin-bottom: 12px;
+}
+
+.btn-pdf:hover {
+    background-color: var(--cor-fundo);
+    color: var(--cor-destaque);
+}
+
+/* Botão secundário para voltar à página anterior */
+.btn-voltar {
+    background-color: transparent;
+    color: var(--cor-destaque);
+    border: 1px solid var(--cor-destaque);
+}
+
+.btn-voltar:hover {
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   4. LAYOUT RESPONSIVO (MEDIA QUERY PARA TELAS DE ATÉ 600PX)
+   ========================================================================== */
+@media (max-width: 600px) {
+    html {
+        padding: 16px 10px;
+    }
+
+    body {
+        padding: 24px 16px;
+    }
+
+    thead th,
+    tbody td {
+        padding: 10px 10px;           /* Diminui o espaço interno das células */
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,96 @@
+/* ==========================================================================
+   1. PALETA DE 3 CORES (:ROOT), FONTE E RESET (BOX MODEL)
+   ========================================================================== */
+:root {
+    --cor-fundo: #F7F4F0;      /* Cor 1: Bege-areia suave */
+    --cor-texto: #2D2926;      /* Cor 2: Marrom-carvão fosco */
+    --cor-destaque: #A64B37;   /* Cor 3: Terracota fosco */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--cor-fundo);
+    padding: 40px 20px;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    max-width: 720px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding: 36px 28px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   2. LISTAS ORDENADAS E NÃO ORDENADAS EM CARTÕES (FLEXBOX + BOX MODEL)
+   ========================================================================== */
+h1, h2, h3 {
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+}
+
+/* Organiza os passos da lista em coluna com espaçamento uniforme via gap */
+ol, ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-left: 20px;                 /* Mantém os números e marcadores visíveis */
+    margin-bottom: 24px;
+}
+
+/* Cada item da lista ganha aparência de cartão individual */
+li {
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-destaque);
+    border-left: 4px solid var(--cor-destaque);
+    border-radius: 6px;
+    padding: 10px 14px;
+}
+
+/* ==========================================================================
+   3. BOTÃO DE VOLTAR (EFEITO HOVER)
+   ========================================================================== */
+a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--cor-destaque);
+    border: 1px solid var(--cor-destaque);
+    padding: 11px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   4. LAYOUT RESPONSIVO (MEDIA QUERY PARA TELAS DE ATÉ 600PX)
+   ========================================================================== */
+@media (max-width: 600px) {
+    html {
+        padding: 16px 10px;
+    }
+
+    body {
+        padding: 24px 16px;
+    }
+}

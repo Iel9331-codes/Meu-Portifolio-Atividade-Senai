@@ -1,0 +1,151 @@
+/* ==========================================================================
+   1. PALETA DE 3 CORES (:ROOT), FONTE E RESET (BOX MODEL)
+   ========================================================================== */
+:root {
+    --cor-fundo: #F7F4F0;      /* Cor 1: Bege-areia suave */
+    --cor-texto: #2D2926;      /* Cor 2: Marrom-carvão fosco */
+    --cor-destaque: #A64B37;   /* Cor 3: Terracota fosco */
+    --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    background-color: var(--cor-fundo);
+    padding: 40px 20px;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    max-width: 640px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    color: var(--cor-texto);
+    line-height: 1.6;
+    padding: 36px 28px;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   2. FORMULÁRIO ESTILIZADO (CARTÃO COM BOX MODEL + FLEXBOX)
+   ========================================================================== */
+h1, h2 {
+    text-align: center;
+    color: var(--cor-texto);
+    border-bottom: 2px solid var(--cor-destaque);
+    padding-bottom: 8px;
+    margin-bottom: 24px;
+}
+
+/* Agrupa rótulos e campos em coluna com espaçamento automático via gap */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    background-color: var(--cor-fundo);
+    border: 1px solid var(--cor-destaque);
+    border-radius: 8px;
+    padding: 24px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+}
+
+/* Estilização uniforme para caixas de texto, seleção e área de mensagem */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 11px 14px;
+    font-family: var(--fonte-principal);
+    font-size: 0.95rem;
+    color: var(--cor-texto);
+    background-color: #FFFFFF;
+    border: 1px solid var(--cor-destaque);
+    border-radius: 6px;
+    outline: none;
+}
+
+/* Destaca a borda do campo quando o usuário clica para digitar */
+input:focus,
+select:focus,
+textarea:focus {
+    border-width: 2px;
+}
+
+textarea {
+    min-height: 110px;
+    resize: vertical;                  /* Permite redimensionar apenas na altura */
+}
+
+/* ==========================================================================
+   3. BOTÃO DE ENVIO E MENU DE VOLTAR (EFEITO HOVER)
+   ========================================================================== */
+button,
+input[type="submit"] {
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+    border: 1px solid var(--cor-destaque);
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Efeito Hover no botão de enviar */
+button:hover,
+input[type="submit"]:hover {
+    background-color: #FFFFFF;
+    color: var(--cor-destaque);
+}
+
+/* Link de voltar em estilo secundário (contornado) */
+a {
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background-color: transparent;
+    color: var(--cor-destaque);
+    border: 1px solid var(--cor-destaque);
+    padding: 11px 20px;
+    margin-top: 20px;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Efeito Hover no botão de voltar */
+a:hover {
+    background-color: var(--cor-destaque);
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   4. LAYOUT RESPONSIVO (MEDIA QUERY PARA TELAS DE ATÉ 600PX)
+   ========================================================================== */
+@media (max-width: 600px) {
+    html {
+        padding: 16px 10px;
+    }
+
+    body {
+        padding: 24px 16px;
+    }
+
+    form {
+        padding: 18px 14px;
+    }
+}
