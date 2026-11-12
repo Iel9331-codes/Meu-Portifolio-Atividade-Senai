@@ -5,8 +5,8 @@
    ========================================================================== */
 :root {
     --cor-fundo: #F7F4F0;      /* Cor 1: Bege-areia suave (fundo da página e cartões) */
-    --cor-texto: #2D2926;      /* Cor 2: Marrom-carvão fosco (textos e títulos) */
-    --cor-destaque: #A64B37;   /* Cor 3: Terracota fosco (bordas, botões e hover) */
+    --cor-texto: #21381c;      /* Cor 2: Marrom-carvão fosco (textos e títulos) */
+    --cor-destaque: #143a24;   /* Cor 3: Terracota fosco (bordas, botões e hover) */
     --fonte-principal: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
