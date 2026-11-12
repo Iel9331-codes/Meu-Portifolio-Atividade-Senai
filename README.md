@@ -8,6 +8,7 @@ Este é um projeto de site desenvolvido durante as aulas de Desenvolvimento de S
 ## Tecnologias Utilizadas
 * **HTML5:** Estruturação das páginas, formulários, tabelas, listas, imagens e links.
 * **CSS:** Estilização visual com variáveis de cores (`:root`), Box Model, Flexbox, efeitos `:hover` e design responsivo.
+* **Auxilio do Gemini pra CSS:** Uso da inteligência artificial para auxilio no css para melhor entrega de aparência 
 
 ---
  
